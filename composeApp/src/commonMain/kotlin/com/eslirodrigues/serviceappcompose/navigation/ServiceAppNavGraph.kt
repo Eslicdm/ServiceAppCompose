@@ -20,8 +20,7 @@ fun ServiceAppNavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = LandingScreen) {
         composable<LandingScreen> {
             LandingScreen(
-                onNavToMemberClick = { navController.navigate(MemberAuthScreen) },
-                onNavToPricingClick = { navController.navigate(PricingAuthScreen) },
+                onLoginClick = { navController.navigate(MemberAuthScreen) },
             )
         }
         composable<MemberAuthScreen> {

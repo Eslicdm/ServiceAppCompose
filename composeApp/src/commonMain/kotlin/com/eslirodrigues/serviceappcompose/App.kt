@@ -14,7 +14,7 @@ fun App(
     onNavHostReady: suspend (NavController) -> Unit = {}
 ) {
     val navController = rememberNavController()
-    MaterialTheme {
+    AppTheme {
         ServiceAppNavGraph(navController)
     }
     LaunchedEffect(navController) {

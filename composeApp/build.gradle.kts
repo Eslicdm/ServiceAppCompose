@@ -57,6 +57,8 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.navigation)
+            implementation(libs.bundles.ktor)
+            implementation(libs.bundles.adaptive)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
