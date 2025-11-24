@@ -59,6 +59,11 @@ kotlin {
             implementation(libs.navigation)
             implementation(libs.bundles.ktor)
             implementation(libs.bundles.adaptive)
+            implementation(compose.material)
+            implementation(compose.materialIconsExtended)
+            implementation(libs.bundles.koin)
+            implementation(libs.bundles.coil)
+            implementation(libs.kotlinx.datetime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
