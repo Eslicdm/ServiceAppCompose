@@ -13,6 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.eslirodrigues.serviceappcompose.management.memberTab.MemberScreen
 import com.eslirodrigues.serviceappcompose.management.memberTab.MemberViewModel
+import com.eslirodrigues.serviceappcompose.management.pricingTab.PricingScreen
+import com.eslirodrigues.serviceappcompose.management.pricingTab.PricingViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -20,6 +22,7 @@ fun ManagementScreen(
     onLogout: () -> Unit
 ) {
     val memberViewModel = koinViewModel<MemberViewModel>()
+    val pricingViewModel = koinViewModel<PricingViewModel>()
     val tabs = listOf("Members", "Pricing")
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
@@ -72,16 +75,9 @@ fun ManagementScreen(
             Box(modifier = Modifier.fillMaxSize().padding(top = 16.dp)) {
                 when (selectedTabIndex) {
                     0 -> MemberScreen(viewModel = memberViewModel)
-                    1 -> PricingTabPlaceholder()
+                    1 -> PricingScreen(viewModel = pricingViewModel)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun PricingTabPlaceholder() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("Pricing Content Coming Soon")
     }
 }

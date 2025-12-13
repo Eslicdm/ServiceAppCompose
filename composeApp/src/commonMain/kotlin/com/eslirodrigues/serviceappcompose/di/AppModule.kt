@@ -2,6 +2,7 @@ package com.eslirodrigues.serviceappcompose.di
 
 import com.eslirodrigues.serviceappcompose.management.memberTab.MemberRepository
 import com.eslirodrigues.serviceappcompose.management.memberTab.MemberViewModel
+import com.eslirodrigues.serviceappcompose.management.pricingTab.PricingViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
@@ -24,4 +25,5 @@ val appModule = module {
 
     single { MemberRepository(get()) }
     viewModelOf(::MemberViewModel)
+    viewModelOf(::PricingViewModel)
 }
